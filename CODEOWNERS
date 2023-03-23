@@ -201,6 +201,7 @@
 /bundles/org.openhab.binding.milight/ @davidgraeff
 /bundles/org.openhab.binding.millheat/ @seime
 /bundles/org.openhab.binding.minecraft/ @ibaton
+/bundles/org.openhab.binding.mitsubishi/ @asretux
 /bundles/org.openhab.binding.modbus/ @ssalonen
 /bundles/org.openhab.binding.modbus.e3dc/ @weymann
 /bundles/org.openhab.binding.modbus.helioseasycontrols/ @bern77
