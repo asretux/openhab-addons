@@ -5,7 +5,7 @@
 	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
 	<!-- Sample Thing Type -->
-	<thing-type id="sample">
+	<thing-type id="mitsubishi">
 		<!-- Comment this in for Things which need a Bridge to function.
 			<supported-bridge-type-refs>
 			<bridge-type-ref id="MitsubishiBridge" />
@@ -16,33 +16,32 @@
 		<description>Sample thing for Mitsubishi Binding</description>
 
 		<channels>
-			<channel id="channel1" typeId="sample-channel"/>
+			<channel id="temperature" typeId="temperature"/>
+			<channel id="mode" typeId="mode"/>
 		</channels>
 
 		<config-description>
-			<parameter name="hostname" type="text" required="true">
+			<parameter name="ip" type="text" required="true">
 				<context>network-address</context>
-				<label>Hostname</label>
-				<description>Hostname or IP address of the device</description>
+				<label>IP address</label>
+				<description>IP address of the device</description>
 			</parameter>
-			<parameter name="password" type="text" required="true">
-				<context>password</context>
-				<label>Password</label>
-				<description>Password to access the device</description>
-			</parameter>
-			<parameter name="refreshInterval" type="integer" unit="s" min="1">
-				<label>Refresh Interval</label>
-				<description>Interval the device is polled in sec.</description>
-				<default>600</default>
-				<advanced>true</advanced>
+			<parameter name="id" type="text" required="true">
+				<context>AC identifier</context>
+				<label>ID</label>
+				<description>Device ID in the network</description>
 			</parameter>
 		</config-description>
 	</thing-type>
 
-	<!-- Sample Channel Type -->
-	<channel-type id="sample-channel">
+	<channel-type id="temperature">
 		<item-type>Number:Temperature</item-type>
-		<label>Example Temperature</label><!-- Use uppercase words, except prepositions. 2-3 words, max 25 chars -->
-		<description>Sample channel for Mitsubishi Binding</description>
+		<label>Temperature</label><!-- Use uppercase words, except prepositions. 2-3 words, max 25 chars -->
+		<description>Temperature for Mitsubishi AC</description>
+	</channel-type>
+	<channel-type id="mode">
+		<item-type>String:Mode</item-type>
+		<label>Mode</label><!-- Use uppercase words, except prepositions. 2-3 words, max 25 chars -->
+		<description>Current mode</description>
 	</channel-type>
 </thing:thing-descriptions>

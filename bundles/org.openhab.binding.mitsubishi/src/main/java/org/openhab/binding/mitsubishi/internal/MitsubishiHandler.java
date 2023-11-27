@@ -62,6 +62,29 @@ public class MitsubishiHandler extends BaseThingHandler {
     public void initialize() {
         config = getConfigAs(MitsubishiConfiguration.class);
 
+        @Nullable
+        String ipAddress = config.ip;
+
+        // Create a new SoapClient to communicate with the AC
+        HttpHelper.post("http://" + ipAddress + "/soap", "aaaa");
+
+        // Call the AC's "getTemperature" method to retrieve the current temperature
+        // String soapAction = "http://ac_endpoint_url/soap/action/getTemperature";
+
+        // Create a new Channel for the temperature and add it to the Thing
+        // Channel temperatureChannel = new ChannelBuilder().thing(getThing().getUID()).id("temperature").type("Number")
+        // .label("Temperature").build();
+        // updateThing(ThingBuilder.create(getThing()).withChannel(temperatureChannel).build());
+
+        // Call the AC's "getMode" method to retrieve the current mode
+        // soapAction = "http://ac_endpoint_url/soap/action/getMode";
+        // response = client.callSoapMethod(soapAction, null);
+
+        // Create a new Channel for the mode and add it to the Thing
+        // Channel modeChannel = new ChannelBuilder().thing(getThing().getUID()).id("mode").type("String").label("Mode")
+        // .build();
+        // updateThing(ThingBuilder.create(getThing()).withChannel(modeChannel).build());
+
         // TODO: Initialize the handler.
         // The framework requires you to return from this method quickly, i.e. any network access must be done in
         // the background initialization below.

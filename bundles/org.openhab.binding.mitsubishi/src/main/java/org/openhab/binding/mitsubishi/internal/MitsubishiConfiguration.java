@@ -25,7 +25,6 @@ public class MitsubishiConfiguration {
     /**
      * Sample configuration parameters. Replace with your own.
      */
-    public String hostname = "";
-    public String password = "";
-    public int refreshInterval = 600;
+    public String ip = "";
+    public String id = "";
 }
